@@ -1,0 +1,433 @@
+#aeb-root,
+#aeb-root * {
+  box-sizing: border-box;
+}
+
+#aeb-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2147483000;
+  background: #ffffff;
+  border-bottom: 1px solid #e4e6ea;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #16181c;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.07);
+}
+
+#aeb-root .aeb-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  flex-wrap: wrap;
+  min-height: 42px;
+}
+
+#aeb-root .aeb-brand {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+#aeb-root .aeb-meta {
+  font-size: 12px;
+  color: #5c6270;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+#aeb-root .aeb-meta b {
+  color: #16181c;
+  font-weight: 700;
+}
+
+#aeb-root .aeb-spacer {
+  flex: 1 1 0;
+}
+
+#aeb-root .aeb-spacer-wide {
+  flex: 3 1 0;
+}
+
+#aeb-root .aeb-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1100px) {
+  #aeb-root .aeb-bar-ebay .aeb-actions {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+#aeb-root button {
+  font: inherit;
+  background: #fff;
+  border: 1px solid #d5d8dd;
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #16181c;
+  line-height: 1;
+  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease, transform 60ms ease;
+}
+
+#aeb-root button:hover {
+  background: #f4f5f7;
+  border-color: #b3b8c0;
+}
+
+#aeb-root button:active {
+  background: #eceef1;
+}
+
+#aeb-root button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#aeb-root button:disabled:hover {
+  background: #fff;
+  border-color: #d5d8dd;
+}
+
+#aeb-root button.aeb-primary:disabled:hover {
+  background: #16181c;
+  border-color: #16181c;
+}
+
+#aeb-root button:focus-visible,
+#aeb-root input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(22, 24, 28, 0.35);
+}
+
+#aeb-root button.aeb-primary {
+  background: #16181c;
+  border-color: #16181c;
+  color: #fff;
+}
+
+#aeb-root button.aeb-primary:hover {
+  background: #2c3138;
+  border-color: #2c3138;
+}
+
+#aeb-root button.aeb-primary:active {
+  background: #101216;
+}
+
+#aeb-root button.aeb-icon {
+  padding: 0 8px;
+  height: 28px;
+  border-color: transparent;
+  background: transparent;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+#aeb-root button.aeb-icon:hover {
+  background: #f1f2f4;
+  border-color: #e4e6ea;
+  color: #16181c;
+}
+
+#aeb-root .aeb-dropdown {
+  display: inline-flex;
+  align-items: stretch;
+  position: relative;
+  height: 30px;
+}
+
+#aeb-root .aeb-bold {
+  font-weight: 700;
+}
+
+/* ONE regular button surface: single border, single background, single radius. */
+#aeb-root .aeb-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 150px;
+  padding: 0 10px;
+  border: 1px solid #16181c;
+  border-radius: 6px;
+  background: #16181c;
+  color: #fff;
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  transform: none !important;
+  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+#aeb-root .aeb-dropdown-toggle:hover,
+#aeb-root .aeb-dropdown.aeb-open .aeb-dropdown-toggle {
+  background: #2c3138;
+  border-color: #2c3138;
+}
+
+#aeb-root .aeb-dropdown-toggle,
+#aeb-root .aeb-dropdown-toggle:hover,
+#aeb-root .aeb-dropdown-toggle:active,
+#aeb-root .aeb-dropdown-toggle:focus,
+#aeb-root .aeb-dropdown.aeb-open .aeb-dropdown-toggle {
+  height: 30px;
+  border-width: 1px;
+  transform: none;
+  top: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: top;
+}
+
+/* Chevron is a click zone inside the SAME button surface: no divider, border, box or background. */
+#aeb-root .aeb-dropdown-toggle .aeb-chevron-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+  font-size: 11px;
+  transform: rotate(0deg);
+  transition: transform 120ms ease;
+}
+
+
+#aeb-root .aeb-dropdown.aeb-open .aeb-dropdown-toggle .aeb-chevron-icon {
+  transform: rotate(180deg);
+}
+
+
+#aeb-root .aeb-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #fff;
+  border: 1px solid #d5d8dd;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(16, 24, 40, 0.12);
+  min-width: 210px;
+  z-index: 5;
+  padding: 5px;
+}
+
+#aeb-root .aeb-menu[hidden] {
+  display: none;
+}
+
+#aeb-root .aeb-menu button {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  height: 30px;
+  text-align: left;
+  justify-content: flex-start;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #16181c;
+}
+
+#aeb-root .aeb-menu button:hover {
+  background: #f1f2f4;
+}
+
+#aeb-root .aeb-menu .aeb-check-mark {
+  width: 12px;
+  color: #16181c;
+  flex: 0 0 12px;
+}
+
+#aeb-root .aeb-status {
+  padding: 6px 12px 7px;
+  border-top: 1px solid #eef0f2;
+  background: #f8f9fb;
+  font-size: 12px;
+  color: #16181c;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+
+/* Notification colors: a task's own outcome always wins over any generic
+   styling — green only for a CONFIRMED success, red only for a CONFIRMED
+   failure, and this same near-black for everything in between (in
+   progress, informational, mixed/partial results). */
+#aeb-root .aeb-status.aeb-status-ok {
+  color: #157a3d;
+}
+
+#aeb-root .aeb-status.aeb-status-err {
+  color: #c2281f;
+}
+
+#aeb-root .aeb-status.aeb-status-neutral {
+  color: #16181c;
+}
+
+
+#aeb-root .aeb-status[hidden],
+#aeb-root .aeb-settings[hidden],
+#aeb-root .aeb-bar[hidden] {
+  display: none;
+}
+
+#aeb-root .aeb-settings {
+  border-top: 1px solid #eef0f2;
+  padding: 10px 12px 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  background: #fcfdfe;
+}
+
+#aeb-root .aeb-card {
+  border: 1px solid #e3e5e8;
+  border-radius: 5px;
+  padding: 10px;
+  background: #fff;
+}
+
+#aeb-root .aeb-card h4 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5c6270;
+}
+
+#aeb-root .aeb-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 10px;
+  align-items: center;
+}
+
+#aeb-root label.aeb-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+#aeb-root input[type="number"],
+#aeb-root input[type="text"] {
+  width: 84px;
+  padding: 3px 6px;
+  border: 1px solid #cfd3d9;
+  border-radius: 4px;
+  font: inherit;
+  text-align: right;
+}
+
+#aeb-root .aeb-out {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  border-bottom: 1px dashed #eef0f2;
+  font-size: 12px;
+}
+
+#aeb-root .aeb-out:last-child {
+  border-bottom: 0;
+}
+
+#aeb-root .aeb-out b {
+  font-weight: 700;
+}
+
+#aeb-root .aeb-subcard {
+  border: 1px dashed #dfe2e6;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 8px;
+  background: #fbfcfd;
+}
+
+#aeb-root .aeb-subcard h5 {
+  margin: 0 0 6px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7a8190;
+}
+
+#aeb-root .aeb-hint {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #7a8190;
+  line-height: 1.4;
+}
+
+/* Collapsed state: a small round floating button, draggable anywhere on the
+   page. Expanding it (a plain tap/click, not a drag) always returns to the
+   exact toolbar above — collapsing never changes what that toolbar is. */
+#aeb-ball {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  margin: 0;
+  z-index: 2147483000;
+  background: #16181c;
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  font: 700 11px Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: grab;
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.32);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#aeb-ball:hover {
+  background: #2c3138;
+}
+
+#aeb-ball:active {
+  cursor: grabbing;
+}
+
+#aeb-ball:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(22, 24, 28, 0.35), 0 4px 14px rgba(16, 24, 40, 0.32);
+}
+
+#aeb-ball[hidden] {
+  display: none;
+}
