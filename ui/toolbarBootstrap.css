@@ -1,0 +1,8 @@
+:root {
+  --aeb-toolbar-height: 44px;
+  padding-top: var(--aeb-toolbar-height) !important;
+}
+
+:root.aeb-toolbar-collapsed {
+  padding-top: 0 !important;
+}

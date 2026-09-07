@@ -1,0 +1,45 @@
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #f6f7f9;
+}
+
+#aeb-root.aeb-settings-page-root {
+  position: static;
+  height: auto;
+  width: min(760px, calc(100% - 32px));
+  margin: 24px auto;
+  border: 1px solid #e4e6ea;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#aeb-root .aeb-settings-page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-bottom: 1px solid #e4e6ea;
+  background: #fff;
+}
+
+#aeb-root .aeb-settings-page-header h1 {
+  margin: 0;
+  color: #16181c;
+  font-size: 18px;
+}
+
+#aeb-root.aeb-settings-page-root .aeb-settings {
+  padding: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 600px) {
+  #aeb-root.aeb-settings-page-root {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+}
